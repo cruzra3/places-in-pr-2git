@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            
+            <h1 class="templateNew-ComponentH1">Add New Comment to <%= place.name %></h1>
+
+            <form action="/places/<%= place._id %>/comments" method="POST">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" placeholder="text">
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <div>
+                <a href="/places">Go Back</a>
+            </div> 
+        </div> 
+        <div class="col-md-3">      
+        </div>
+
+    </div>
+
+<!-- </div> -->
+
+<% include ../partials/footer %>

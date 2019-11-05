@@ -1,0 +1,75 @@
+<% include ../partials/header %>
+
+  <!-- <div class="container"> -->
+    <div class="card templateShow-ComponentCard">
+        
+        <img class="card-img-top img-fluid" src="<%= place.image %>" alt="Picture of Place">
+
+        <div id="card-body-01" class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= place.name %></a>
+            </h4>
+        </div>
+
+        <div id="card-body-02" class="card-body">
+            <p class="card-text folderPlaces-docShow-placeDesc">
+              <%= place.description %>
+            </p> 
+            <p>
+              <em >
+                  Submitted by: <%= place.author.username %>, 
+                  <%= moment(place.createdAt).fromNow() %>
+              </em>
+            </p> 
+            <% if(currentUser && place.author.id.equals(currentUser._id)){ %>
+              <a class="btn btn-xs btn-warning" href="/places/<%= place._id %>/edit">Edit</a> 
+              <form id="fPlaces-tShow-cDeleteButton" action="/places/<%= place._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-xs btn-danger">Delete</button>
+              </form> 
+            <% } %>
+        </div>
+    </div>
+
+    <div class="card bg-light p-3 templateShow-ComponentCard ">
+      <p class="mb-3">
+          <a class="card-link btn btn-success" href="/places/<%= place._id %>/comments/new">
+          Add New Comment
+          </a>
+      </p>
+      <div id="card-body-03" class="card-body">
+          <%  place.comments.forEach((comment) => { %>
+            <div class="row">
+                <div class="col-md-9 d-flex ml-auto">
+                    <strong><%= comment.author.username %></strong> 
+                </div>
+                <div class="col-md-3">
+                    <!-- 10 days ago -->
+                    <%= moment(comment.createdAt).fromNow() %>
+                </div>  
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <%= comment.text %>
+                    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                        <p>
+                            <form 
+                            action="/places/<%= place._id %>/comments/<%= comment._id %>?_method=DELETE"
+                            method="POST">
+                                <a class="btn btn-xs btn-warning" 
+                                href="/places/<%= place._id %>/comments/<%= comment._id %>/edit">
+                                Edit
+                                </a>
+                                <input 
+                                    class="btn btn-xs btn-danger fPlaces-tShow-cDeleteButton" 
+                                    type="submit" value="Delete">
+                            </form> 
+                        </p>  
+                    <% } %>   
+                </div>
+                  
+            </div>
+          <%  }) %>
+        </div>
+    </div>
+  <!-- </div>   -->
+<% include ../partials/footer %>

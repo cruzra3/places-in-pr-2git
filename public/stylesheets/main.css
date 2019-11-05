@@ -1,0 +1,92 @@
+.templateHeader-ComponentNav {
+    margin-bottom: 25px;
+}
+
+.templateNew-ComponentH1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.templateShow-ComponentCard {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 45rem;
+}
+
+.templateIndex-ComponentCard {
+    width: 18rem;
+    margin-bottom: 35px;
+}
+
+#card-body-01 {
+    padding-bottom: 0px;
+    padding-left: 15px;
+}
+
+#card-body-02 {
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+#card-body-03 {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.card.bg-light.p-3 {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 35rem;
+    max-height: 35rem;
+}
+
+.folderPlaces-docShow-placeDesc {
+    font-size: 1.5em;
+}
+
+.fPlaces-tEdit-cH1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#fPlaces-tShow-cDeleteButton {
+    display: inline;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: .45rem .6rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+  }
+
+  .fComments-tEdit-cH1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#fviews-tLogin-iDiv01 {
+    width:  30%; 
+    margin: 25px auto;
+}
+
+#fviews-tLogin-iH1 {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#fviews-tRegister-iDiv01 {
+    width: 30%; 
+    margin: 25px auto;
+}
+
+#fviews-tRegister-iH1 {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.fPlaces-tindex-cSubmitBtn {
+    margin-left: 5px;
+}
