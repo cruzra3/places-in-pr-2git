@@ -20,6 +20,10 @@
                   Submitted by: <%= place.author.username %>, 
                   <%= moment(place.createdAt).fromNow() %>
               </em>
+              <p>
+                <a class="btn btn-md btn-primary" href="/places">Go back</a>
+              </p>
+              
             </p> 
             <% if(currentUser && place.author.id.equals(currentUser._id)){ %>
               <a class="btn btn-xs btn-warning" href="/places/<%= place._id %>/edit">Edit</a> 

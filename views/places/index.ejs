@@ -1,46 +1,40 @@
 <% include ../partials/header %>
 
-<!-- <div class="container"> -->
-        <div class="container"></div>
-            <header class="jumbotron">   
-                <h1>Welcome to Places in Puerto Rico!</h1>
-                <p>View our hand-picked and visited places in Puerto Rico</p>
-                <p>
-                    <a class="btn btn-primary btn-lg" href="/places/new">Add New Place</a>
-                </p>
-                <p>
-                    <form class="form-inline" action="/places" method="GET">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="search" placeholder="Place Name to Search">
-                            <input class="btn btn-primary fPlaces-tindex-cSubmitBtn" type="submit" value="Search">
-                        </div>
-                    </form>
-                </p>
-            </header>
-        </div>    
-
-        <div class="container">
-            <div class="row text-center">  
-                    <div class="col-md-12">
-                        <% if(noMatch !== null) { %>
-                            <h3><%= noMatch %></h3>
-                        <% } %>
-                    </div>
-                <% places.forEach((place) => { %>
-                    <div class="col-sm">
-                        <div class="card templateIndex-ComponentCard">
-                            <img class="card-img-top img-fluid" src="<%= place.image %>" >
-                            <div class="card-body">
-                                <h4 class="card-title"><%= place.name %></h4>
-                            </div>
-                            <p>
-                                <a class="btn btn-primary" href="places/<%= place._id %>">More Info</a>
-                            </p>
-                        </div>
-                    </div>
-                <% }); %>
+<header class="jumbotron">
+    <h1>Welcome to Places in Puerto Rico!</h1>
+    <p>View our hand-picked and visited places in Puerto Rico</p>
+    <p>
+        <a class="btn btn-primary btn-lg" href="/places/new">Add New Place</a>
+    </p>
+    <p>
+        <form class="form-inline" action="/places" method="GET">
+            <div class="form-group">
+                <input class="form-control" type="text" name="search" placeholder="Place Name to Search">
+                <input class="btn btn-primary fPlaces-tindex-cSubmitBtn" type="submit" value="Search">
             </div>
+        </form>
+    </p>
+</header>
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <% if(noMatch !== null) { %>
+        <h3><%= noMatch %></h3>
+        <% } %>
+    </div>
+    <% places.forEach((place) => { %>
+    <div class="col-sm">
+        <div class="card templateIndex-ComponentCard">
+            <img class="card-img-top img-fluid" src="<%= place.image %>">
+            <div class="card-body">
+                <h4 class="card-title"><%= place.name %></h4>
+            </div>
+            <p>
+                <a class="btn btn-primary" href="places/<%= place._id %>">More Info</a>
+            </p>
         </div>
-<!-- </div> -->
+    </div>
+    <% }); %>
+</div>
 
 <% include ../partials/footer %>
